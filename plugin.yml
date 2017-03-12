@@ -1,0 +1,10 @@
+name: SuperParticles
+version: 1.0.0
+api: 
+- 2.1.0
+- 3.0.0-ALPHA4
+main: RTG\SP\Loader
+author: RTG
+commands:
+    sp:
+        description: "For SP!"
