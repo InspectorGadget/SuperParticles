@@ -46,17 +46,29 @@ class Loader extends PluginBase implements Listener {
         
         if(isset($this->list[strtolower($p->getName())])) {
             
-        
-            $x = $p->getX();
-            $y = $p->getY();
-            $z = $p->getZ();
+                $pos = $p->getPosition();
                 
-                $red = new DustParticle(new Vector3($x, $y, $z), 252, 17, 17);
-                $green = new DustParticle(new Vector3($x, $y, $z), 102, 153, 102);
-                $flame = new FlameParticle(new Vector3($x, $y, $z));
+                $red = new DustParticle($pos->add(0, 2.5), 252, 17, 17);
+                $green = new DustParticle($pos->add(0, 2.1), 102, 153, 102);
+                $orange = new DustParticle($pos->add(0, 2.1), 252, 135, 17);
+                $yellow = new DustParticle($pos->add(0, 1.7), 252, 252, 17);
+                $lblue = new DustParticle($pos->add(0, 0.9), 94, 94, 252);
+                $dblue = new DustParticle($pos->add(0, 0.5), 17, 17, 252);
+                $flame = new FlameParticle($pos->add(0, 0.3));
+                
+                //2
+                
+                $red2 = new DustParticle($pos->add(0, 2.5), 252, 17, 17);
+                $green2 = new DustParticle($pos->add(0, 2.1), 102, 153, 102);
+                $orange2 = new DustParticle($pos->add(0, 2.1), 252, 135, 17);
+                $yellow2 = new DustParticle($pos->add(0, 1.7), 252, 252, 17);
+                $lblue2 = new DustParticle($pos->add(0, 0.9), 94, 94, 252);
+                $dblue2 = new DustParticle($pos->add(0, 0.5), 17, 17, 252);
+                $flame2 = new FlameParticle($pos->add(0, 0.3));
+                
                 $level = $p->getLevel();
                 
-                foreach([$red, $green, $flame] as $particle) {
+                foreach([$red, $green, $orange, $yellow, $lblue, $dblue, $flame, $red2, $green2, $orange2, $yellow2, $lblue2, $dblue2, $flame2] as $particle) {
                     
                     $level->addParticle($particle);
                     
